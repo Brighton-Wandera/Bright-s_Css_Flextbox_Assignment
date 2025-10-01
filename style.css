@@ -1,8 +1,10 @@
+
 body{
     font-family: 'Inter',sans-serif;
     line-height: 1.6;
     font-size: 15px;
     background-color: whitesmoke;
+    position: relative; 
 }
 .container{
     width: 90%;
@@ -18,89 +20,113 @@ h1, h2, h3, p {
    justify-content: space-between; 
    align-items: center;
    margin-bottom: 2rem;
-   padding: 2rem 0;
+   padding: 1rem 0; 
 }
-
+.menu-icon {
+    display: block; 
+    cursor: pointer;
+    z-index: 100;
+}
+.close-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 5%; /
+}
+.nav-links {
+    position: fixed; 
+    top: 0;
+    right: -100%; 
+    width: 70%;
+    height: 100vh;
+    background-color: whitesmoke;
+    padding-top: 8rem;
+    transition: right 0.3s ease-in-out;
+}
+.nav-links.active {
+    right: 0; 
+}
 .nav-links ul{
     display: flex;
+    flex-direction: column; 
     list-style: none;
+    padding: 0;
 }
-
 .nav-links a{
     text-decoration: none;
     margin-left: 2rem;
+    line-height: 3; 
+    font-size: 1.2rem;
+    color: #333; 
 }
-
-
 .home{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr; 
     margin-bottom: 4rem;
     gap: 2rem;
-}   
+}    
 .home .left img{
     max-width: 100%;
     display: block;
 }
 
-
 .future {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 4.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; 
+    margin-top: 1.5rem; 
     align-items: center;
 }
 .future h1{
-    font-size: 3.5rem;
+    font-size: 2.5rem; 
     font-weight: 800;
     line-height: 1.1;
 }
 .future p{
-    color: hsl(240, 100%, 75%);
+    color: hsl(236, 13%, 42%);
 }
 .button{
     display: inline-block;
     color: whitesmoke;
     text-decoration: none;
-    background-color: hsl(14, 83%, 55%);
+    background-color: hsl(5, 85%, 63%); 
     padding: 0.8rem 2rem;
-    border-radius: 5px;
     margin-top: 1.5rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
 }
 
-
 .right{
     background-color: hsl(240, 100%, 5%);
     color: whitesmoke;
     padding: 1.5rem;
+    margin-top: 2rem; 
 }
 .right h1{
-    color: hsl(46, 100%, 53%);
+    color: hsl(35, 77%, 62%); 
     margin-bottom: 1.5rem;
-    font-size: 2.5rem;
+    font-size: 2rem; 
 }
 .right .content-new h3{
     line-height: 1.25rem;
     margin-bottom: 0.5rem;
+    color: white; 
 }
 .right .content-new p{
-    color: hsl(0, 0%, 78%);
-
+    color: hsl(233, 8%, 79%);
 }
 .right hr{
     border: none;
-    border-top: 1px solid hsl(0, 0%, 45%);
+    border-top: 1px solid hsl(236, 13%, 42%);
     margin: 2rem 0;
 }
 
 .bottom{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
 }
 .bottom-article{
     display: flex;
@@ -109,20 +135,95 @@ h1, h2, h3, p {
 }
 .bottom-article img{
     width: 120px;
-    height: 180px;
+    height: 150px;
     object-fit: cover;
 }
 .bottom-article h1{
     font-size: 2rem;
-    color: hsl(60, 1%, 69%);
+    color: hsl(233, 8%, 79%);
     font-weight: 700;
 }
 .bottom-article h3{
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     font-size: 1.1rem;
     font-weight: 800;
+    color: #333;
+}
+.bottom-article p {
+    color: hsl(236, 13%, 42%);
 }
 .attribution{
     margin-top: 5.5rem; 
-    padding-left: 22rem;
+    text-align: center; 
+    padding-left: 0; 
+}
+
+
+@media (min-width: 768px) {
+    .menu-icon, .close-icon {
+        display: none; 
+    }
+    
+    .nav-links {
+        position: static; 
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+        right: 0;
+    }
+    
+    .nav-links ul{
+        flex-direction: row; 
+    }
+
+    .nav-links a{
+        margin-left: 2rem;
+        line-height: 1; 
+        font-size: 15px; 
+        color: hsl(236, 13%, 42%); 
+    }
+
+    .nav-links a:hover {
+        color: hsl(5, 85%, 63%);
+    }
+
+    .home{
+        grid-template-columns: 2fr 1fr; 
+    }
+    
+    .right {
+        margin-top: 0;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .future {
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem;
+        margin-top: 4.5rem;
+    }
+
+    .future h1{
+        font-size: 3.5rem;/
+    }
+
+    .right h1 {
+        font-size: 2.5rem;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 1.5rem;
+    }
+
+    .attribution{
+        padding-left: 22rem; 
+        text-align: left;
+    }
 }
