@@ -22,18 +22,6 @@ h1, h2, h3, p {
    margin-bottom: 2rem;
    padding: 1rem 0; 
 }
-.menu-icon {
-    display: block; 
-    cursor: pointer;
-    z-index: 100;
-}
-.close-icon {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 2rem;
-    right: 5%; /
-}
 .nav-links {
     position: fixed; 
     top: 0;
@@ -43,9 +31,6 @@ h1, h2, h3, p {
     background-color: whitesmoke;
     padding-top: 8rem;
     transition: right 0.3s ease-in-out;
-}
-.nav-links.active {
-    right: 0; 
 }
 .nav-links ul{
     display: flex;

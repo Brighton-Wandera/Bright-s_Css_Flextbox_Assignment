@@ -36,7 +36,7 @@
         <div class="home">
             <div class="left">
                 <picture>
-                    <source media="(max-width: 767px)" srcset="images/image-web-3-mobile.jpg">
+                    <source media="(max-width: 100px)" srcset="images/image-web-3-mobile.jpg">
                     <img src="images/image-web-3-desktop.jpg" alt="homepage picture">
                 </picture>
                 
@@ -108,19 +108,5 @@
         Coded by <a href="https://github.com/Brighton-Wandera">Brighton Wandera</a>.
         </div>
     </div>
-
-    <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.add('active');
-        });
-
-        closeIcon.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    </script>
 </body>
 </html>
