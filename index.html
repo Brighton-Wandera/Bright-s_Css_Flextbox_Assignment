@@ -13,23 +13,33 @@
                 <img src="images/logo.svg" alt="this is logo image">
             </div>
 
+            <div class="menu-icon" id="menu-icon">
+                <img src="images/icon-menu.svg" alt="menu">
+            </div>
+            
             <div class="nav-links">
+                 <div class="close-icon" id="close-icon">
+                    <img src="images/icon-menu-close.svg" alt="close menu">
+                </div>
                 <nav>
-                    <ul>
+                    <ul id="nav-menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">New</a></li>
                         <li><a href="#">Trending</a></li>
                         <li><a href="#">Popular</a></li>
                         <li><a href="#">Categories</a></li>
                     </ul>
-
                 </nav>
             </div>
         </div>
 
         <div class="home">
             <div class="left">
-                <img src="images/image-web-3-desktop.jpg" alt="homepage picture">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="images/image-web-3-mobile.jpg">
+                    <img src="images/image-web-3-desktop.jpg" alt="homepage picture">
+                </picture>
+                
                 <div class="future">
                     <div class="section1">
                         <h1>The Bright Future of Web 3.0?</h1>
@@ -46,7 +56,7 @@
                 <h1>New</h1> 
                 <div class="content">
                     <div class="content-new">
-                        <h3>Hdrogen VS Electric Cars</h3>
+                        <h3>Hydrogen VS Electric Cars</h3>
                         <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
                     </div>
                     
@@ -55,17 +65,18 @@
                     <div class="content-new">
                         <h3>The Downside of AI Artistry</h3>
                         <p>What are the possible adverse effects of on-demand AI Image generation</p>
-                    </div>               
+                    </div>          
 
                     <hr>
 
                     <div class="content-new">
                         <h3>Is VC Funding Drying Up?</h3>
                         <p>Private funds by VC firms is down 50% YOY. We take a look at what that means</p>
-                    </div>        
-               </div> 
+                    </div>      
+                </div> 
             </div>
         </div>
+
         <div class="bottom">
             <div class="bottom-article">
                 <img src="images/image-retro-pcs.jpg" alt="retro-pcs">
@@ -97,5 +108,19 @@
         Coded by <a href="https://github.com/Brighton-Wandera">Brighton Wandera</a>.
         </div>
     </div>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.add('active');
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
